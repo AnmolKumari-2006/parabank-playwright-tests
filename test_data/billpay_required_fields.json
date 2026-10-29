@@ -1,0 +1,11 @@
+[
+  {"field": "payee_name",     "expected_error": "Payee name is required."},
+  {"field": "street",         "expected_error": "Address is required."},
+  {"field": "city",           "expected_error": "City is required."},
+  {"field": "state",          "expected_error": "State is required."},
+  {"field": "zip_code",       "expected_error": "Zip Code is required."},
+  {"field": "phone",          "expected_error": "Phone number is required."},
+  {"field": "account",        "expected_error": "Account number is required."},
+  {"field": "verify_account", "expected_error": "Account number is required."},
+  {"field": "amount",         "expected_error": "The amount cannot be empty."}
+]

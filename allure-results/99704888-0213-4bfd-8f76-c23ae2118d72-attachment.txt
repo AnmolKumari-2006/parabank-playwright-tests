@@ -1,0 +1,15 @@
+HTTP 200  http://localhost:8080/parabank/services/bank/login/pb3f521135a3/Pwf00c7097!
+
+{
+  "id": 12656,
+  "firstName": "Dominic",
+  "lastName": "Hernandez",
+  "address": {
+    "street": "95088 Lisa Throughway Suite 740",
+    "city": "Lake Katherine",
+    "state": "PR",
+    "zipCode": "29168"
+  },
+  "phoneNumber": "9903572230",
+  "ssn": "672-48-7725"
+}

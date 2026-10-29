@@ -1,0 +1,8 @@
+{
+  "name": "parabank-tests-report",
+  "private": true,
+  "description": "Only used to build the Allure HTML report from the pytest results.",
+  "devDependencies": {
+    "allure": "3.22.0"
+  }
+}

@@ -1,0 +1,15 @@
+HTTP 200  http://localhost:8080/parabank/services/bank/login/pbd213eecdba/Pw2ac63213!
+
+{
+  "id": 12545,
+  "firstName": "Tara",
+  "lastName": "Cook",
+  "address": {
+    "street": "64739 Tate Isle",
+    "city": "Lindseymouth",
+    "state": "NM",
+    "zipCode": "19988"
+  },
+  "phoneNumber": "1980207944",
+  "ssn": "880-01-6066"
+}

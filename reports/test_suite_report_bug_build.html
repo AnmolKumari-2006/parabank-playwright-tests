@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test Suite Report - ParaBank</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;font-size:13px;color:#1f2933;background:#fff}
+.top{padding:12px 18px;border-bottom:1px solid #e3e7ec}
+.top h1{font-size:15px;margin:0 0 4px}
+.top .crumb{font-size:11.5px;color:#6b7785} .top .crumb b{color:#1f2933;font-weight:600}
+.wrap{padding:16px 18px 40px}
+.title{display:flex;align-items:center;gap:12px;margin:8px 0 14px}
+.title h2{font-size:22px;margin:0;font-weight:600}
+.panel{border:1px solid #dfe5ec;border-top:4px solid #2b5797;border-radius:6px;background:#f2f5f9;overflow:hidden}
+.env{display:grid;grid-template-columns:repeat(4,auto 1fr);gap:4px 14px;padding:12px 14px;font-size:12px}
+.env dt{color:#6b7785} .env dd{margin:0;font-weight:500}
+.sum{display:flex;border-top:1px solid #dfe5ec;background:#eef2f7}
+.counts{display:flex;align-items:stretch;gap:0;flex:1}
+.box{padding:10px 18px;text-align:center} .box b{display:block;font-size:20px;font-weight:600}
+.box span{font-size:11.5px;color:#55606d;display:inline-flex;align-items:center;gap:4px}
+.box.total{background:#fff;border-right:1px solid #dfe5ec;min-width:92px}
+.times{display:flex;gap:40px;padding:10px 22px;border-left:1px solid #dfe5ec;background:#fff}
+.times div span{display:block;font-size:11.5px;color:#6b7785} .times b{font-weight:500}
+.banner{margin:12px 0 0;padding:9px 12px;border-radius:6px;background:#fff6d6;border:1px solid #f1d27a;color:#6b4b00}
+table.main{width:100%;border-collapse:separate;border-spacing:0 6px;margin-top:12px}
+table.main thead th{background:#2b2b2b;color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.3px;text-align:left;padding:14px 10px}
+table.main thead th:first-child{border-radius:6px 0 0 6px} table.main thead th:last-child{border-radius:0 6px 6px 0}
+tr.case td{background:#fff;border-top:1px solid #e3e7ec;border-bottom:1px solid #e3e7ec;padding:10px;vertical-align:middle;cursor:pointer}
+tr.case td:first-child{border-left:1px solid #e3e7ec;border-radius:6px 0 0 6px}
+tr.case td:last-child{border-right:1px solid #e3e7ec;border-radius:0 6px 6px 0}
+tr.case:hover td{background:#f7f9fc}
+.arrow{width:26px;color:#8a95a3;font-size:18px;transition:transform .15s} .arrow.open{transform:rotate(90deg)}
+.num{width:30px;color:#55606d}
+.link{color:#3558c9} .sub{font-size:11.5px;color:#6b7785;margin-top:3px}
+.time{color:#55606d;font-size:12px;line-height:1.35;white-space:nowrap}
+.st{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.res{white-space:nowrap} .cnt{display:inline-flex;align-items:center;gap:4px;margin-right:14px;font-size:12px}
+.ic{display:inline-block;width:13px;height:13px;border-radius:50%;position:relative;flex:none}
+.ic.passed{background:#22a447} .ic.failed{background:#d92d20} .ic.error{background:#b42318} .ic.skipped{background:#2f6fde}
+.ic::after{position:absolute;inset:0;color:#fff;font-size:9px;font-weight:700;display:grid;place-items:center;line-height:13px}
+.ic.passed::after{content:"\2713"} .ic.failed::after{content:"\2715"} .ic.error::after{content:"!"} .ic.skipped::after{content:"\00BB"}
+tr.detail{display:none} tr.detail.open{display:table-row}
+tr.detail td{padding:0 10px 10px}
+.path{font-family:Consolas,monospace;font-size:11.5px;color:#6b7785;margin:2px 0 6px}
+table.runs{width:100%;border-collapse:collapse;background:#fafbfd;border:1px solid #e3e7ec;border-radius:6px;font-size:12px}
+table.runs th{text-align:left;color:#55606d;font-weight:600;padding:7px 10px;border-bottom:1px solid #e3e7ec}
+table.runs td{padding:7px 10px;border-bottom:1px solid #eef1f5;vertical-align:top}
+td.msg{font-family:Consolas,monospace;font-size:11.5px;color:#7a271a;word-break:break-word}
+.foot{margin-top:14px;color:#8a95a3;font-size:11.5px}
+</style></head>
+<body>
+<div class="top"><h1>Test Suite Report</h1>
+<div class="crumb">Project: <b>ParaBank</b> - Test Suite ID: <b>tests/ParaBank Test Suite</b></div></div>
+<div class="wrap">
+<div class="title"><h2>ParaBank Test Suite</h2></div>
+<div class="panel">
+  <dl class="env">
+    <dt>Host name</dt><dd>DESKTOP-HMA8J4U</dd><dt>Platform</dt><dd>Windows-11</dd><dt>Base URL</dt><dd>http://localhost:8080/parabank/</dd><dt>Tools</dt><dd>Playwright 1.64.1 &nbsp;·&nbsp; pytest 9.1.1</dd>
+    <dt>Local OS</dt><dd>Windows 11 AMD64</dd><dt>Browsers</dt><dd>Chromium 156.0.8078.4 &nbsp;·&nbsp; Firefox 157.0</dd><dt>Test runs</dt><dd>29</dd><dt></dt><dd></dd>
+  </dl>
+  <div class="sum">
+    <div class="counts">
+      <div class="box total"><b>18</b><span>Test Cases</span></div>
+      <div class="box"><b>15</b><span><i class="ic passed"></i>Passed</span></div>
+      <div class="box"><b>3</b><span><i class="ic failed"></i>Failed</span></div>
+      <div class="box"><b>0</b><span><i class="ic error"></i>Error</span></div>
+      <div class="box"><b>0</b><span><i class="ic skipped"></i>Skipped</span></div>
+    </div>
+    <div class="times"><div><span>Start</span><b>2026-10-29 23:16:49.7</b></div><div><span>End</span><b>2026-10-29 23:17:48.5</b></div><div><span>Duration</span><b>58.800s</b></div></div>
+  </div>
+</div>
+<div class="banner">This run tested a ParaBank build with a deliberate bug in its code (BillPayController: a bill payment is reported as successful but the amount is never taken from the account). E2E_BIL_01 is expected to fail.</div>
+<table class="main"><thead><tr><th></th><th>#</th><th>Test Case</th><th>Status</th><th>Start</th><th>Duration</th><th># Runs</th><th>Result</th></tr></thead>
+<tbody>
+<tr class="case" onclick="toggle(1)">
+  <td class="arrow" id="a1">&#8250;</td><td class="num">1</td>
+  <td><span class="link">Test Cases/API_01</span>
+      <div class="sub">REST API &middot; Create &middot; POST /createAccount opens a SAVINGS account funded with the minimum deposit, which moves from the source account.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:16:49.9</td>
+  <td>3.911s</td><td>1</td><td class="res"><span class="cnt"><i class="ic passed"></i>1</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d1"><td></td><td colspan="7">
+  <div class="path">api/test_API_01_create_account</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>API (no browser)</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:16:49.9</td><td>3.911s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(2)">
+  <td class="arrow" id="a2">&#8250;</td><td class="num">2</td>
+  <td><span class="link">Test Cases/API_02</span>
+      <div class="sub">REST API &middot; Read &middot; GET /accounts/{id} returns 200 and the correct details.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:16:53.8</td>
+  <td>0.483s</td><td>1</td><td class="res"><span class="cnt"><i class="ic passed"></i>1</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d2"><td></td><td colspan="7">
+  <div class="path">api/test_API_02_read_existing_account</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>API (no browser)</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:16:53.8</td><td>0.483s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(3)">
+  <td class="arrow" id="a3">&#8250;</td><td class="num">3</td>
+  <td><span class="link">Test Cases/API_03</span>
+      <div class="sub">REST API &middot; Read (missing) &middot; GET /accounts/{id} for an id that does not exist returns a client error (4xx), not 200 and not a server error (5xx).</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:16:54.3</td>
+  <td>0.092s</td><td>1</td><td class="res"><span class="cnt"><i class="ic passed"></i>1</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d3"><td></td><td colspan="7">
+  <div class="path">api/test_API_03_read_missing_account</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>API (no browser)</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:16:54.3</td><td>0.092s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(4)">
+  <td class="arrow" id="a4">&#8250;</td><td class="num">4</td>
+  <td><span class="link">Test Cases/API_04</span>
+      <div class="sub">REST API &middot; Update &middot; POST /customers/update/{id} changes the address, and GET shows the change.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:16:54.4</td>
+  <td>0.542s</td><td>1</td><td class="res"><span class="cnt"><i class="ic passed"></i>1</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d4"><td></td><td colspan="7">
+  <div class="path">api/test_API_04_update_customer_address</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>API (no browser)</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:16:54.4</td><td>0.542s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(5)">
+  <td class="arrow" id="a5">&#8250;</td><td class="num">5</td>
+  <td><span class="link">Test Cases/E2E_BIL_01</span>
+      <div class="sub">Bill Pay &middot; Positive &middot; A 25.00 payment completes and the balance drops by 25.00.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:16:54.9</td>
+  <td>8.253s</td><td>2</td><td class="res"><span class="cnt"><i class="ic passed"></i>2</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d5"><td></td><td colspan="7">
+  <div class="path">e2e/test_E2E_BIL_01_pay_bill_with_valid_details</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:16:54.9</td><td>2.221s</td><td class='msg'>-</td></tr><tr><td>Firefox</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:15.4</td><td>6.032s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(6)">
+  <td class="arrow" id="a6">&#8250;</td><td class="num">6</td>
+  <td><span class="link">Test Cases/E2E_BIL_02</span>
+      <div class="sub">Bill Pay &middot; Negative &middot; An empty form shows the required-field messages and pays nothing.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:16:57.1</td>
+  <td>3.649s</td><td>2</td><td class="res"><span class="cnt"><i class="ic passed"></i>2</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d6"><td></td><td colspan="7">
+  <div class="path">e2e/test_E2E_BIL_02_pay_bill_with_all_fields_empty</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:16:57.1</td><td>1.280s</td><td class='msg'>-</td></tr><tr><td>Firefox</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:21.5</td><td>2.369s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(7)">
+  <td class="arrow" id="a7">&#8250;</td><td class="num">7</td>
+  <td><span class="link">Test Cases/E2E_BIL_03</span>
+      <div class="sub">Bill Pay &middot; Negative &middot; Different Account # and Verify Account # must be refused.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:16:58.4</td>
+  <td>4.068s</td><td>2</td><td class="res"><span class="cnt"><i class="ic passed"></i>2</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d7"><td></td><td colspan="7">
+  <div class="path">e2e/test_E2E_BIL_03_account_and_verify_account_do_not_match</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:16:58.4</td><td>1.437s</td><td class='msg'>-</td></tr><tr><td>Firefox</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:23.9</td><td>2.630s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(8)">
+  <td class="arrow" id="a8">&#8250;</td><td class="num">8</td>
+  <td><span class="link">Test Cases/E2E_LOG_01</span>
+      <div class="sub">Login &middot; Positive &middot; A registered customer can log in.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:16:59.9</td>
+  <td>3.290s</td><td>2</td><td class="res"><span class="cnt"><i class="ic passed"></i>2</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d8"><td></td><td colspan="7">
+  <div class="path">e2e/test_E2E_LOG_01_login_with_valid_credentials</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:16:59.9</td><td>1.200s</td><td class='msg'>-</td></tr><tr><td>Firefox</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:26.5</td><td>2.090s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(9)">
+  <td class="arrow" id="a9">&#8250;</td><td class="num">9</td>
+  <td><span class="link">Test Cases/E2E_LOG_02</span>
+      <div class="sub">Login &middot; Negative &middot; A wrong password is rejected.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:17:01.1</td>
+  <td>3.414s</td><td>2</td><td class="res"><span class="cnt"><i class="ic passed"></i>2</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d9"><td></td><td colspan="7">
+  <div class="path">e2e/test_E2E_LOG_02_login_with_wrong_password</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:01.1</td><td>1.237s</td><td class='msg'>-</td></tr><tr><td>Firefox</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:28.6</td><td>2.177s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(10)">
+  <td class="arrow" id="a10">&#8250;</td><td class="num">10</td>
+  <td><span class="link">Test Cases/E2E_LOG_03</span>
+      <div class="sub">Login &middot; Negative &middot; Empty username and password are rejected.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:17:02.3</td>
+  <td>1.889s</td><td>2</td><td class="res"><span class="cnt"><i class="ic passed"></i>2</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d10"><td></td><td colspan="7">
+  <div class="path">e2e/test_E2E_LOG_03_login_with_empty_fields</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:02.3</td><td>0.602s</td><td class='msg'>-</td></tr><tr><td>Firefox</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:30.8</td><td>1.287s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(11)">
+  <td class="arrow" id="a11">&#8250;</td><td class="num">11</td>
+  <td><span class="link">Test Cases/E2E_REG_01</span>
+      <div class="sub">Register &middot; Positive &middot; A new customer can open an online account.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:17:03.0</td>
+  <td>2.842s</td><td>2</td><td class="res"><span class="cnt"><i class="ic passed"></i>2</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d11"><td></td><td colspan="7">
+  <div class="path">e2e/test_E2E_REG_01_register_with_valid_details</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:03.0</td><td>0.798s</td><td class='msg'>-</td></tr><tr><td>Firefox</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:32.1</td><td>2.044s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(12)">
+  <td class="arrow" id="a12">&#8250;</td><td class="num">12</td>
+  <td><span class="link">Test Cases/E2E_REG_02</span>
+      <div class="sub">Register &middot; Negative &middot; An empty form shows a message for every required field.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:17:03.8</td>
+  <td>2.972s</td><td>2</td><td class="res"><span class="cnt"><i class="ic passed"></i>2</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d12"><td></td><td colspan="7">
+  <div class="path">e2e/test_E2E_REG_02_register_with_all_fields_empty</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:03.8</td><td>0.792s</td><td class='msg'>-</td></tr><tr><td>Firefox</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:34.1</td><td>2.180s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(13)">
+  <td class="arrow" id="a13">&#8250;</td><td class="num">13</td>
+  <td><span class="link">Test Cases/E2E_REG_03</span>
+      <div class="sub">Register &middot; Negative &middot; Letters in ZIP Code, Phone # and SSN must be rejected.</div></td>
+  <td><span class="st"><i class="ic failed"></i>Failed</span></td>
+  <td class="time">2026-10-29<br>23:17:04.6</td>
+  <td>2.577s</td><td>2</td><td class="res"><span class="cnt"><i class="ic passed"></i>0</span><span class="cnt"><i class="ic failed"></i>2</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d13"><td></td><td colspan="7">
+  <div class="path">e2e/test_E2E_REG_03_register_with_letters_in_numeric_fields</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic failed"></i>Failed</span></td><td>2026-10-29 23:17:04.6</td><td>0.898s</td><td class='msg'>AssertionError: No validation error for: [&#x27;phone&#x27;, &#x27;ssn&#x27;, &#x27;zip_code&#x27;]. Account created: True. Page shows: &#x27;Experience the difference\n\nSolutions\nAbout Us\nServices\nProducts\nLocations\nAdmin Page\nhome\nabout\ncontact\n\nWelcome Austin Hayden\n\nAccount Services\nOpen New Account\nAccounts Overvi</td></tr><tr><td>Firefox</td><td><span class="st"><i class="ic failed"></i>Failed</span></td><td>2026-10-29 23:17:36.3</td><td>1.679s</td><td class='msg'>AssertionError: No validation error for: [&#x27;phone&#x27;, &#x27;ssn&#x27;, &#x27;zip_code&#x27;]. Account created: True. Page shows: &#x27;Experience the difference\n\nSolutions\nAbout Us\nServices\nProducts\nLocations\nAdmin Page\nhome\nabout\ncontact\n\nWelcome Sarah Robertson\n\nAccount Services\nOpen New Account\nAccounts Over</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(14)">
+  <td class="arrow" id="a14">&#8250;</td><td class="num">14</td>
+  <td><span class="link">Test Cases/E2E_TRF_01</span>
+      <div class="sub">Transfer Funds &middot; Positive &middot; 50.00 moves from the first account to the second.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:17:05.5</td>
+  <td>7.354s</td><td>2</td><td class="res"><span class="cnt"><i class="ic passed"></i>2</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d14"><td></td><td colspan="7">
+  <div class="path">e2e/test_E2E_TRF_01_transfer_valid_amount_between_own_accounts</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:05.5</td><td>2.670s</td><td class='msg'>-</td></tr><tr><td>Firefox</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:38.0</td><td>4.684s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(15)">
+  <td class="arrow" id="a15">&#8250;</td><td class="num">15</td>
+  <td><span class="link">Test Cases/E2E_TRF_02</span>
+      <div class="sub">Transfer Funds &middot; Negative &middot; An empty amount must give a validation message, not a server error.</div></td>
+  <td><span class="st"><i class="ic failed"></i>Failed</span></td>
+  <td class="time">2026-10-29<br>23:17:08.1</td>
+  <td>6.123s</td><td>2</td><td class="res"><span class="cnt"><i class="ic passed"></i>0</span><span class="cnt"><i class="ic failed"></i>2</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d15"><td></td><td colspan="7">
+  <div class="path">e2e/test_E2E_TRF_02_transfer_with_empty_amount</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic failed"></i>Failed</span></td><td>2026-10-29 23:17:08.1</td><td>1.925s</td><td class='msg'>AssertionError: Server error instead of a validation message. Page shows: &#x27;Experience the difference\n\nSolutions\nAbout Us\nServices\nProducts\nLocations\nAdmin Page\nhome\nabout\ncontact\n\nWelcome Karen Hoffman\n\nAccount Services\nOpen New Account\nAccounts Overview\nTransfer Funds\nBill Pay\nFi</td></tr><tr><td>Firefox</td><td><span class="st"><i class="ic failed"></i>Failed</span></td><td>2026-10-29 23:17:42.7</td><td>4.199s</td><td class='msg'>AssertionError: Server error instead of a validation message. Page shows: &#x27;Experience the difference\n\nSolutions\nAbout Us\nServices\nProducts\nLocations\nAdmin Page\nhome\nabout\ncontact\n\nWelcome Lee Garza\n\nAccount Services\nOpen New Account\nAccounts Overview\nTransfer Funds\nBill Pay\nFind T</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(16)">
+  <td class="arrow" id="a16">&#8250;</td><td class="num">16</td>
+  <td><span class="link">Test Cases/E2E_TRF_03</span>
+      <div class="sub">Transfer Funds &middot; Negative &middot; An amount 0.01 above the available balance must be refused.</div></td>
+  <td><span class="st"><i class="ic failed"></i>Failed</span></td>
+  <td class="time">2026-10-29<br>23:17:10.1</td>
+  <td>2.200s</td><td>1</td><td class="res"><span class="cnt"><i class="ic passed"></i>0</span><span class="cnt"><i class="ic failed"></i>1</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d16"><td></td><td colspan="7">
+  <div class="path">e2e/test_E2E_TRF_03_transfer_more_than_available_balance</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic failed"></i>Failed</span></td><td>2026-10-29 23:17:10.1</td><td>2.200s</td><td class='msg'>AssertionError: Transfer of 415.51 was completed although the balance is only 415.50. Balances after: {&#x27;15342&#x27;: Decimal(&#x27;-0.01&#x27;), &#x27;15453&#x27;: Decimal(&#x27;515.51&#x27;)} assert &#x27;result&#x27; != &#x27;result&#x27;</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(17)">
+  <td class="arrow" id="a17">&#8250;</td><td class="num">17</td>
+  <td><span class="link">Test Cases/MOCK_01</span>
+      <div class="sub">Network Mocking &middot; Mocking &middot; Server returns an empty list: the page stays usable and shows no accounts.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:17:12.3</td>
+  <td>1.687s</td><td>1</td><td class="res"><span class="cnt"><i class="ic passed"></i>1</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d17"><td></td><td colspan="7">
+  <div class="path">mocking/test_MOCK_01_accounts_overview_with_empty_account_list</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:12.3</td><td>1.687s</td><td class='msg'>-</td></tr></table>
+</td></tr>
+<tr class="case" onclick="toggle(18)">
+  <td class="arrow" id="a18">&#8250;</td><td class="num">18</td>
+  <td><span class="link">Test Cases/MOCK_02</span>
+      <div class="sub">Network Mocking &middot; Mocking &middot; Server returns HTTP 500: the page stays usable and tells the user something went wrong.</div></td>
+  <td><span class="st"><i class="ic passed"></i>Passed</span></td>
+  <td class="time">2026-10-29<br>23:17:14.0</td>
+  <td>1.464s</td><td>1</td><td class="res"><span class="cnt"><i class="ic passed"></i>1</span><span class="cnt"><i class="ic failed"></i>0</span><span class="cnt"><i class="ic error"></i>0</span><span class="cnt"><i class="ic skipped"></i>0</span></td>
+</tr>
+<tr class="detail" id="d18"><td></td><td colspan="7">
+  <div class="path">mocking/test_MOCK_02_accounts_overview_when_server_returns_error</div>
+  <table class="runs"><tr><th>Browser</th><th>Status</th><th>Start</th><th>Duration</th><th>Message</th></tr><tr><td>Chromium</td><td><span class="st"><i class="ic passed"></i>Passed</span></td><td>2026-10-29 23:17:14.0</td><td>1.464s</td><td class='msg'>-</td></tr></table>
+</td></tr></tbody></table>
+<div class="foot">Click a test case to see its result in every browser. "# Runs" = how many times the test case ran (3 browsers; API tests run once).</div>
+</div>
+<script>
+function toggle(n){document.getElementById('d'+n).classList.toggle('open');document.getElementById('a'+n).classList.toggle('open');}
+</script>
+</body></html>

@@ -1,0 +1,8 @@
+HTTP 200  http://localhost:8080/parabank/services/bank/createAccount?customerId=12545&newAccountType=1&fromAccountId=13677
+
+{
+  "id": 13788,
+  "customerId": 12545,
+  "type": "SAVINGS",
+  "balance": 0
+}

@@ -1,0 +1,15 @@
+HTTP 200  http://localhost:8080/parabank/services/bank/customers/12767
+
+{
+  "id": 12767,
+  "firstName": "Kenneth",
+  "lastName": "Adams",
+  "address": {
+    "street": "11838 Holland Lane",
+    "city": "Meredithberg",
+    "state": "FM",
+    "zipCode": "27632"
+  },
+  "phoneNumber": "2355592902",
+  "ssn": "091-33-1362"
+}

@@ -1,0 +1,8 @@
+HTTP 200  http://localhost:8080/parabank/services/bank/accounts/13677
+
+{
+  "id": 13677,
+  "customerId": 12545,
+  "type": "CHECKING",
+  "balance": 415.5
+}

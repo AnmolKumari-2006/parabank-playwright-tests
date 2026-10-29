@@ -1,0 +1,15 @@
+HTTP 200  http://localhost:8080/parabank/services/bank/login/pbe5930d75ab/Pw35131b5b!
+
+{
+  "id": 12767,
+  "firstName": "Kenneth",
+  "lastName": "Adams",
+  "address": {
+    "street": "8048 Dalton Port",
+    "city": "New Josephberg",
+    "state": "FM",
+    "zipCode": "27632"
+  },
+  "phoneNumber": "2355592902",
+  "ssn": "091-33-1362"
+}
